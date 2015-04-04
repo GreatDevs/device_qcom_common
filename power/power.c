@@ -215,7 +215,6 @@ static void power_hint(__attribute__((unused)) struct power_module *module, powe
         case POWER_HINT_INTERACTION:
         break;
         case POWER_HINT_CPU_BOOST:
-        case POWER_HINT_AUDIO:
         case POWER_HINT_LOW_POWER:
 #ifdef BOOST_HINT
         {
@@ -236,7 +235,6 @@ static void power_hint(__attribute__((unused)) struct power_module *module, powe
             pthread_mutex_lock(&hint_mutex);
             process_video_decode_hint(data);
             pthread_mutex_unlock(&hint_mutex);
-        break;
         break;
     }
 }
